@@ -1,53 +1,318 @@
+/* ========================================
+   General Body & Layout
+   ======================================== */
+   body {
+    font-family: 'Georgia', serif;
+    background-color: #fefefe;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header,
+  footer {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #555;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  footer {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  
+  /* Default spacing for all sections */
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* ========================================
+     Hero Section
+     ======================================== */
+  .hero-header {
+    position: relative;
+    height: 50vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('images/blue_lake_mountain.jpg') center/cover no-repeat;
+    overflow: hidden;
+  }
+  
+  .hero-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), white);
+    pointer-events: none;
+  }
+  
+  .hero-header h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .page-header {
+    font-family: 'Georgia', serif;
+    color: #222; /* Use dark color for visibility */
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+  
+
+  @media (max-width: 768px) {
+    .hero-header {
+      height: 30vh;
+    }
+    .hero-header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-header {
+      height: 25vh;
+    }
+    .hero-header h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* ========================================
+     Shared Article & Poem Container
+     ======================================== */
+  .article,
+  .poem {
+    max-width: 900px;       /* same width for both */
+    margin: 2rem auto;      /* centered with vertical spacing */
+    padding: 2rem;          /* internal padding */
+    border-radius: 8px;     /* rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+  }
+  
+  
+
+  
+  /* ========================================
+     Article Styles
+     ======================================== */
+  .article {
+    background-color: white;
+    border-left: 6px solid #2c3e50; /* accent border matching h2 color */
+  }
+  
+  .article h2 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 0.5rem;
+  }
+  
+  .article p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article p i {
+    color: #8e44ad;
+    font-style: italic;
+  }
+  
+  /* ========================================
+     Poem Styles (article-like container, poetic text)
+     ======================================== */
+  .poem {
+    background-color: white;           /* like .article */
+    border-left: 6px solid #2c3e50;    /* like .article */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* like .article */
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+  }
+
+  .poem h2 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 0.5rem;
+  }
+
+  .poem p {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    white-space: pre-line;   /* preserve line breaks */
+    color: #333;
+    text-align: center;
+  }
+
+  /* ========================================
+     Collapsible Sections
+     ======================================== */
+  .collapsible-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .collapsible {
+    background: #f5f5f5;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif;
+    border-radius: 4px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .collapsible:hover {
+    background: #e0e0e0;
+  }
+
+  /* Arrow icon using ::before on span */
+  .collapsible span::before {
+    content: "▶";
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  /* Rotate arrow to point south when active */
+  .collapsible.active span::before {
+    transform: rotate(90deg);
+  }
+    
+  .content {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    border-left: 4px solid #2c3e50;
+    max-height: 0;
+  }
+
+  .content.open {
+    padding: 1rem;
+    max-height: none;
+  }
+
+  .footnote {
+    font-size: 0.95em;
+    color: #555;
+    margin: 1em 0 1em 2em;
+    border-left: 2px solid #eee;
+    padding-left: 1em;
+    background: #fafafa;
+    border-radius: 4px;
+}
+
+.footnote a {
+    text-decoration: none;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+ /* ========================================
+    Profile Page Styles
+     ======================================== */
+ 
+
 body {
-  font-family: 'Georgia', serif;
-  background-color: #fefefe;
-  color: #222;
   margin: 0;
-  padding: 0;
-}
-header, footer {
-  background: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #555;
-}
-main {
-  padding: 1rem;
-}
-footer {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-section {
-  margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
+  background: #fefefe;
+  color: #333;
 }
 
-.hero-header {
-  position: relative;
-  height: 400px; /* adjust as needed */
-  color: white;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header_profile {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+header_profile h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+.profile {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url('images/mountain_yellow_landscape.jpg') center/cover no-repeat;
-  z-index: 1;
-  overflow: hidden;
+  gap: 20px;
 }
 
-/* This creates the fading effect at the bottom of the image */
-.hero-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px; /* height of the fade */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), white); /* fade into your page background */
-  z-index: 2;
-  pointer-events: none;
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bio {
+  text-align: center;
+}
+
+.bio h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.bio a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.bio a:hover {
+  text-decoration: underline;
+}
+
+footer_profile {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.5em;
+  color: #555;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
 }
