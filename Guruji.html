@@ -7,13 +7,14 @@
 </head>
 
 <body >
-  <main>
+  <main class="article">
 
 <!--  HEADER -->
 
-  <header class="page-header">
-    <h1>Guruji</h1>
-  </header>
+  <div class="guruji-header">
+  <img src="images/Guruji.webp" alt="Guruji" class="guruji-image">
+  </div>
+
 
 
 <!-- POEMS -->
@@ -118,7 +119,7 @@
 
 <!-- RUSTLING LEAVES -->
 
-    <section class="article">
+    <section class="article-nested">
       <h2>Rustling Leaves</h2>
 
       <div class="collapsible-section">
@@ -535,20 +536,20 @@
         </div>
       </div>
     </section>  
-  </main>
+  
 
 <!-- GURU KRIPA LIB -->
 
-    <section class="article">
+    <section class="article-nested" >
       <h2> Paddles to reach the other shore</h2>
         <p>
-          Guru Kripa Library
-          <a href="https://pointers.html">Click me</a> 
+          <a href="https://www.librarycat.org/lib/7rudra7"> Guru Kripa Library</a> 
         </p>
 
     </section>
+  </main>
 
-
+    <a href="index.html" class="back-button">Back to Home</a>
 <!-- FOOTER -->
 
   <footer>ੴ 🌸 ॐ</footer>
@@ -600,5 +601,11 @@
     });
   });
 </script>
+<script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+
 </body>
 </html>

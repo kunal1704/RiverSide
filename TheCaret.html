@@ -12,11 +12,11 @@
   <header class="page-header">
     <h1>TheCaret</h1>
   </header>
-  <main>
+  <main class="article">
 
 <!-- CAESURA  -->
 
-    <section class="article" >
+    <section >
       <h2>Caesura</h2>
       <p>Silence is the ground of creativity. But it gets lost in the ushering noise of ill-
         formed thoughts. Strands of thoughts spill over each other in unshapely
@@ -34,7 +34,7 @@
 
 <!-- CROSSCURRENTS -->  
     
-    <section class="article">
+    <section >
       <h2>Crosscurrents</h2>
       <div class="collapsible-section">
         <button class="collapsible">
@@ -158,21 +158,21 @@
 
 <!-- RESOURCES--> 
     
-    <section class="article">
+    <section >
      <h2>Resources</h2> 
         <h3> The Ink Pool</h3>
         <p>
           Resources for editors: dictionaries, style guides, grammar references.
-          <a href="https://theinkpool.html">Click me</a> 
+          <a href="inkpool.html">Click me</a> 
         </p> 
       
         <h3> Pointers to the Moon</h3>
         <p>
           List of spiritual books which have spoken to me, and which I hope will speak to you.
-          <a href="https://pointers.html">Click me</a> 
+          <a href="pointers.html">Click me</a> 
         </p>  
     </section> 
-
+    <a href="index.html" class="back-button">Back to Home</a>
   </main>
   <footer>ੴ 🌸 ॐ</footer>
 
@@ -223,6 +223,12 @@
     });
   });
 </script>
+<script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+
 
 
 </body>
